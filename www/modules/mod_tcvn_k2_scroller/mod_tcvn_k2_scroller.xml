@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<extension
+	type="module"
+	version="3.1"
+	client="site"
+	method="upgrade">
+	
+    <name>TCVN Item Scroller for K2</name>
+    <creationDate>May 31, 2013</creationDate>
+    <author>TheCoders.vn</author>
+    <authorUrl>http://TheCoders.vn</authorUrl>
+    <copyright>Copyright (C) 2012 - 2013 Thecoders.vn. All rights reserved.</copyright>
+    <license>http://www.gnu.org/licenses/gpl-3.0.html GNU/GPL</license>
+    <version>3.2</version>
+	
+	<description>
+        <![CDATA[<div style="border: 1px solid red; border-radius: 7px; padding: 10px;">
+                <p><strong>TCVN Item Scroler for K2</strong> is a good choice for showing serial content to bring more efficiency transferring information to readers. You can run multiple module on a single page, for display latest or featured items by category or select specific items, customize captions area, selectable cool animation effects, and much much more options via module parameters.</p>
+                <strong>TheCoders.vn</strong> - Free <a href="http://thecoders.vn/joomla-modules.html" target="_blank">Joomla Modules</a>, <a href="http://thecoders.vn/joomla-plugins.html" target="_blank">Joomla Plugins</a>, <a href="http://thecoders.vn/joomla-templates.html" target="_blank">Joomla Templates</a>.
+            </div>	
+			<h3>Basic Options:</h3>
+        ]]>
+    </description>
+	
+	<files>
+		<filename module="mod_tcvn_k2_scroller">mod_tcvn_k2_scroller.php</filename>
+		<filename>mod_tcvn_k2_scroller.xml</filename>
+		<filename>helper.php</filename>
+		<filename>index.html</filename>
+		
+		<folder>assets</folder>
+		<folder>libs</folder>
+		<folder>tmpl</folder>
+	</files>
+	
+	<languages>
+		<language tag="en-GB">en-GB.mod_tcvn_k2_scroller.ini</language>
+	</languages>
+	
+	<config>
+		<fields name="params">
+			<!-- Module Params Block -->
+			<fieldset name="basic" addfieldpath="modules/mod_tcvn_k2_scroller/libs/elements">
+				<field
+					name="moduleclass_sfx"
+					type="text"
+					label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+					description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+				<field name="sliderWidth" 
+					type="text" 
+					default="595" 
+					label="TCVN_K2_SCROLLER_MODULE_WIDTH" 
+					description="TCVN_K2_SCROLLER_MODULE_WIDTH_DESC" />
+				<field name="sliderHeight" 
+					type="text" 
+					default="385" 
+					label="TCVN_K2_SCROLLER_MODULE_HEIGHT" 
+					description="TCVN_K2_SCROLLER_MODULE_HEIGHT_DESC" />
+                <field 
+					name="selectthumb" 
+					type="radio" 
+					class="btn-group btn-group-yesno"
+					default="1" 
+					label="TCVN_K2_SCROLLER_SELECT_THUMB" 
+					description="TCVN_K2_SCROLLER_SELECT_THUMB_DESC">
+						<option value="0">TCVN_K2_SCROLLER_NO</option>
+						<option value="1">TCVN_K2_SCROLLER_YES</option>
+				</field>
+				<field 
+					name="imageWidth" 
+					type="text" 
+					default="250"
+					label="TCVN_K2_SCORLLER_WITDH_IMAGE"
+					description="TCVN_K2_SCORLLER_WITDH_IMAGE_DESC" />
+				<field 
+					name="imageHeight" 
+					type="text" 
+					default="130"
+					label="TCVN_K2_SCORLLER_HEIGHT_IMAGE"
+					description="TCVN_K2_SCORLLER_HEIGHT_IMAGE_DESC" />
+                <field
+					name="theme"
+					type="list"
+					default="theme1" 
+					label="TCVN_K2_SCROLLER_THEME"
+					description="TCVN_K2_SCROLLER_THEME_DESC">
+						<option value="theme1">White</option>
+						<option value="theme2">Black</option>
+				</field>
+				<field 
+					name="linkTitle" 
+					type="radio" 
+					class="btn-group btn-group-yesno"
+					default="1" 
+					label="TCVN_K2_SCROLLER_SHOW_LINK_ON_TITLE" 
+					description="TCVN_K2_SCROLLER_SHOW_LINK_ON_TITLE_DESC">
+						<option value="0">TCVN_K2_SCROLLER_NO</option>
+						<option value="1">TCVN_K2_SCROLLER_YES</option>
+				</field>	
+			</fieldset>
+			
+			<!-- Source Params Block -->
+			<fieldset name="source" addfieldpath="/administrator/components/com_k2/elements/">
+				<field 
+					name="itemImage" 
+					type="radio" 
+					default="1" 
+					label="K2_IMAGE" 
+					description=""
+					class="btn-group btn-group-yesno">
+						<option value="0">K2_HIDE</option>
+						<option value="1">K2_SHOW</option>
+                </field>
+				<field 
+					name="itemImgSize" 
+					type="list" 
+					default="XLarge" 
+					label="TCVN_K2_SCROLLER_IMAGE_SIZE" 
+					description="TCVN_K2_SCROLLER_IMAGE_SIZE_DESC">
+						<option value="XSmall">K2_XSMALL</option>
+						<option value="Small">K2_SMALL</option>
+						<option value="Medium">K2_MEDIUM</option>
+						<option value="Large">K2_LARGE</option>
+						<option value="XLarge">K2_XLARGE</option>
+						<option value="Original">K2_ORIGINAL</option>
+				</field>
+				<field 
+					name="numberItems" 
+					type="text" 
+					default="5" 
+					label="TCVN_K2_SCROLLER_ITEM_COUNT" 
+					description="TCVN_K2_SCROLLER_ITEM_COUNT_DESC" />
+				<field 
+					name="source" 
+					type="list" 
+					default="filter" 
+					label="TCVN_K2_SCROLLER_ITEM_SOURCE" 
+					description="TCVN_K2_SCROLLER_ITEM_SOURCE_DESC">
+						<option value="filter">TCVN_K2_SCROLLER_ITEM_FROM_CATEGORIES</option>
+						<option value="specific">TCVN_K2_SCROLLER_SPECIFIC_ITEMS</option>
+				</field>
+				<field 
+					name="" 
+					type="header" 
+					default="TCVN_K2_SCROLLER_ITEM_FROM_CATEGORIES" 
+					label="" 
+					description="TCVN_K2_SCROLLER_ITEM_FROM_CATEGORIES"/>
+				<field 
+					name="catfilter" 
+					type="radio" 
+					default="0" 
+					class="btn-group btn-group-yesno"
+					label="TCVN_K2_SCROLLER_CATEGORY_FILTER" 
+					description="TCVN_K2_SCROLLER_CATEGORY_FILTER_DESC">
+						<option value="0">K2_ALL</option>
+						<option value="1">K2_SELECT</option>
+				</field>
+				<field 
+					name="category_id" 
+					type="categoriesmultiple" 
+					default="" 
+					label="TCVN_K2_SCROLLER_SELECT_ONE_OR_MORE_CATEGORIES" 
+					description="TCVN_K2_SCROLLER_SELECT_ONE_OR_MORE_CATEGORIES_DESC" />
+				<field 
+					name="getChildren" 
+					type="radio" 
+					class="btn-group btn-group-yesno"
+					default="0" 
+					label="TCVN_K2_SCROLLER_FETCH_ITEMS_FROM_CHILD_CAT" 
+					description="TCVN_K2_SCROLLER_FETCH_ITEMS_FROM_CHILD_CAT_DESC">
+						<option value="0">TCVN_K2_SCROLLER_NO</option>
+						<option value="1">TCVN_K2_SCROLLER_YES</option>
+				</field>
+				<field 
+					name="itemsOrdering" 
+					type="list" 
+					default="" 
+					label="TCVN_K2_SCROLLER_ITEM_ORDERING" 
+					description="TCVN_K2_SCROLLER_ITEM_ORDERING_DESC">
+						<option value="">K2_DEFAULT</option>
+						<option value="date">K2_OLDEST_FIRST</option>
+						<option value="rdate">K2_MOST_RECENT_FIRST</option>
+						<option value="publishUp">K2_RECENTLY_PUBLISHED</option>
+						<option value="alpha">K2_TITLE_ALPHABETICAL</option>
+						<option value="ralpha">K2_TITLE_REVERSEALPHABETICAL</option>
+						<option value="order">K2_ORDERING</option>
+						<option value="rorder">K2_ORDERING_REVERSE</option>
+						<option value="hits">K2_MOST_POPULAR</option>
+						<option value="best">K2_HIGHEST_RATED</option>
+						<option value="comments">K2_MOST_COMMENTED</option>
+						<option value="modified">K2_LATEST_MODIFIED</option>
+						<option value="rand">K2_RANDOM_ORDERING</option>
+				</field>
+				<field 
+					name="FeaturedItems" 
+					type="list" 
+					default="1" 
+					label="TCVN_K2_SCROLLER_FEATURED_ITEMS" 
+					description="TCVN_K2_SCROLLER_FEATURED_ITEMS_DESC">
+						<option value="0">K2_HIDE</option>
+						<option value="1">K2_SHOW</option>
+						<option value="2">K2_SHOW_ONLY_FEATURED_ITEMS</option>
+				</field>
+				<field 
+					name="popularityRange" 
+					type="list" 
+					default="" 
+					label="K2_TIME_RANGE_IF_ORDERING_IS_SET_TO_MOST_POPULAR_OR_MOST_COMMENTED" 
+					description="">
+						<option value="">K2_ALL_TIME</option>
+						<option value="1">K2_1_DAY</option>
+						<option value="3">K2_3_DAYS</option>
+						<option value="7">K2_1_WEEK</option>
+						<option value="15">K2_2_WEEKS</option>
+						<option value="30">K2_1_MONTH</option>
+						<option value="90">K2_3_MONTHS</option>
+						<option value="180">K2_6_MONTHS</option>
+				</field>
+				<field 
+					name="" 
+					type="header" 
+					default="TCVN_K2_SCROLLER_SPECIFIC_ITEMS" 
+					label="TCVN_K2_SCROLLER_SPECIFIC_ITEMS" 
+					description="TCVN_K2_SCROLLER_SPECIFIC_ITEMS" />
+				<field 
+					name="item" 
+					type="item" 
+					default="" 
+					label="K2_ADD_ITEMS" 
+					description="K2_ADD_ITEMS" />
+				<field 
+					name="items" 
+					type="items" 
+					default="" 
+					label="K2_DRAG_AND_DROP_TO_REORDER_ITEMS" 
+					description="K2_DRAG_AND_DROP_TO_REORDER_ITEMS_DESC" />
+				<field 
+					name="itemTitle" 
+					type="radio" 
+					default="1" 
+					label="K2_TITLE" 
+					description="" 
+					class="btn-group btn-group-yesno">
+						<option value="0">K2_HIDE</option>
+						<option value="1">K2_SHOW</option>
+				</field>
+				<field 
+					name="itemIntroText" 
+					type="radio" 
+					default="1" 
+					label="K2_INTROTEXT" 
+					description="" 
+					class="btn-group btn-group-yesno">
+						<option value="0">K2_HIDE</option>
+						<option value="1">K2_SHOW</option>
+				</field>
+				<field name="itemIntroTextWordLimit" type="text" size="4" default="" label="K2_INTROTEXT_WORD_LIMIT" description="K2_LEAVE_BLANK_TO_DIASBLE_IF_YOU_ENABLE_THIS_OPTION_ALL_HTML_TAGS_FROM_THE_TEXT_WILL_BE_CLEANED_UP_TO_MAKE_SURE_THE_HTML_STRUCTURE_OF_THE_SITE_DOES_NOT_BRAKE"/>
+				<field 
+					name="showread" 
+					type="radio" 
+					default="1" 
+					class="btn-group btn-group-yesno"
+					label="TCVN_K2_SCROLLER_SHOW_READ" 
+					description="TCVN_K2_SCROLLER_SHOW_READ_DESC">
+						<option value="0">TCVN_K2_SCROLLER_NO</option>
+						<option value="1">TCVN_K2_SCROLLER_YES</option>
+				</field>
+			</fieldset>
+			
+			<!-- Advanced Params Block -->
+			<fieldset name="effects">
+				<field 
+					name="slideview" 
+					type="text" 
+					default="2"
+					label="TCVN_K2_SCORLLER_VIEW"
+					description="TCVN_K2_SCORLLER_VIEW_DESC" />
+				<field 
+					name="slideSpacing" 
+					type="text" 
+					default="30"
+					label="TCVN_K2_SCORLLER_SPACING"
+					description="" />
+				<field 
+					name="touchenabled" 
+					type="radio" 
+					default="on" 
+					class="btn-group btn-group-yesno"
+					label="TCVN_K2_SCORLLER_TOUCH" 
+					description="">
+						<option value="off">Off</option>
+						<option value="on">On</option>
+				</field>
+				<field 
+					name="mouseWheel" 
+					type="radio" 
+					default="on" 
+					class="btn-group btn-group-yesno"
+					label="TCVN_K2_SCORLLER_SHOW_MOUSE" 
+					description="">
+						<option value="off">Off</option>
+						<option value="on">On</option>
+				</field>
+				<field 
+					name="hoverAlpha" 
+					type="radio" 
+					class="btn-group btn-group-yesno"
+					default="off" 
+					label="TCVN_K2_SCORLLER_HOVER" 
+					description="">
+						<option value="off">Off</option>
+						<option value="on">On</option>
+				</field>
+				<field 
+					name="hovereffect" 
+					type="radio" 
+					default="on" 
+					class="btn-group btn-group-yesno"
+					label="TCVN_K2_SCORLLER_HOVER_EFFECT" 
+					description="">
+						<option value="off">Off</option>
+						<option value="on">On</option>
+				</field>
+				<field 
+					name="slideshow" 
+					type="text" 
+					default="3000"
+					label="TCVN_K2_SCORLLER_SLIDE_SHOW"
+					description="" />
+			</fieldset>
+			
+			<!-- Advanced Params Block -->
+			<fieldset name="advanced">
+				<field
+					name="cache"
+					type="list"
+					default="1"
+					label="COM_MODULES_FIELD_CACHING_LABEL"
+					description="COM_MODULES_FIELD_CACHING_DESC">
+						<option value="1">JGLOBAL_USE_GLOBAL</option>
+						<option value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+				</field>
+				<field
+					name="cache_time"
+					type="text"
+					default="900"
+					label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
+					description="COM_MODULES_FIELD_CACHE_TIME_DESC" />
+			</fieldset>
+		</fields>
+	</config>
+</extension>

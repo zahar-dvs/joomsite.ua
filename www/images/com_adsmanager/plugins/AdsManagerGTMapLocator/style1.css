@@ -1,0 +1,13 @@
+
+#address{
+border:5px solid #993333;
+}
+
+
+.ui-autocomplete {
+    background-color: white;
+    width: 300px;
+    border: 1px solid #000;
+    list-style-type: none;
+    padding: 5px;
+}

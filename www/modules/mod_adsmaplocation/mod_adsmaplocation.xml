@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="2.5.0" client="site" method="upgrade"> 
+	<name>AdsMap Location Module</name>
+	<author>Gotour Web Solution</author>
+	<creationDate>10 Dec 2013</creationDate>
+	<copyright>Copyright (C) 2009-2013. All rights reserved.</copyright>
+	<license>http://websolution.gotour.it</license>
+	<authorEmail>webmaster@gotour.it</authorEmail>
+	<authorUrl>http://websolution.gotour.it</authorUrl>
+	<version>3.0</version>
+	<description>AdsMap Location Module shows a Google Map with markers of the AdsManager entries. Ver 3.0</description>
+	<languages>
+		<language tag="en-GB">en-GB.mod_adsmaplocation.ini</language>
+	</languages>
+	<files>
+		<filename module="mod_adsmaplocation">mod_adsmaplocation.php</filename>
+		<filename>mod_adsmaplocation.xml</filename>
+		<filename>index.html</filename>
+		<filename>helper.php</filename>
+		<folder>tmpl</folder>
+		<folder>images</folder>
+		<folder>js</folder>
+	</files>
+	
+	<config>
+	<fields name="params">
+	<fieldset name="basic">
+	<field name="profileinteg" type="list" default="0" label="Integration Profile" description="Integration Profile (default is AdsManager)">
+			<option value="0">AdsManager</option>
+			<option value="1">JomSocial</option>
+			<option value="2">Community Builder</option>
+		</field>
+		<field name="runpms" type="list" default="4" label="Pms System" description="Enable Pms System (default is No Private Message System)">
+			<option value="0">JomSocial</option>
+			<option value="1">UddeIm</option>
+			<option value="2">Jam</option>
+			<option value="3">Primezilla</option>
+			<option value="4">No Private Message System</option>
+		</field>
+		<field name="itemid" type="text" default="" label="Itemid AdsManager" description="Insert menu Itemid of AdsManager" />
+		<field name="fieldmap" type="text" default="" label="AdsManager Field Map" description="Insert the field name of the map (ie.: ad_googlemap) Note: You can used GTMap Locator or GMap Plugin" />
+		<field name="jquerycheck" type="list" default="0" label="Load JQuery library" description="Load Jquery library">
+			<option value="0">Yes</option>
+			<option value="1">No</option>
+		</field>
+		<field name="resp" type="list" default="1" label="Responsive" description="Enable Responsive mode (if enable it disable the width set)">
+			<option value="1">Enable</option>
+			<option value="2">Disable</option>
+		</field>
+		<field name="width" type="text" default="500" label="Width" description="Width of the canvas (default is 500px)" />
+		<field name="height" type="text" default="400" label="Height" description="Height of the canvas (default is 400px)" />
+		<field name="autocentermap" type="list" default="1" label="Auto Center/Zoom Map" description="Set Center Map (default is Yes)">
+			<option value="1">Yes</option>
+			<option value="2">No</option>
+		</field>
+		<field name="latdefault" type="text" default="0" label="Default Latitude" description="Changes the center point of the map - Latitude (Set it, if you Select 'No Auto Center Map')" />
+		<field name="lngdefault" type="text" default="0" label="Default Longitude" description="Changes the center point of the map - Longitude (Set it, if you Select 'No Auto Center Map')" />
+
+
+<field name="zoomlevelmap" type="text" default="5" size="2" label="Zoom Level Map" description="Set Zoom Level Map (Set it, if you Select 'No Auto Center/Zoom Map')" />
+<field name="maptype" type="list" default="ROADMAP" label="Map type" description="Choose the map type">
+					<option value="HYBRID">HYBRID</option>
+					<option value="ROADMAP">ROADMAP</option>
+					<option value="SATELLITE">SATELLITE</option>
+					<option value="TERRAIN">TERRAIN</option>
+				</field>
+		</fieldset>
+		</fields>
+		
+		<fields name="params">
+		<fieldset name="advanced">
+		<field name="iconmarker" type="list" default="flag" label="Icon Marker" description="Choose marker style (default is 15)">
+		<option value="auto-category">Auto Category</option>
+			<option value="red-dot">Red-dot</option>
+			<option value="house">House</option>
+			<option value="house-flag">House flag</option>
+			<option value="auto">Auto</option>
+			<option value="flag">Flag</option>
+			<option value="food">Food</option>
+			<option value="coffe">Coffe</option>
+			<option value="chat">Chat</option>
+			<option value="basket">Basket</option>
+			<option value="drink">Drink</option>
+			<option value="user">User</option>
+		</field>
+		<field name="showtitle" type="list" default="1" label="Show Ads title" description="Show Ads pic (default is Show)">
+			<option value="1">Show</option>
+			<option value="2">Hide</option>
+		</field>
+		<field name="showdesc" type="list" default="1" label="Show Ads description" description="Show Ads description (default is Show)">
+			<option value="1">Show</option>
+			<option value="2">Hide</option>
+		</field>
+		<field name="showcat" type="list" default="1" label="Show Ads category" description="Show Ads category (default is Show)">
+			<option value="1">Show</option>
+			<option value="2">Hide</option>
+		</field>
+		<field name="showprice" type="list" default="1" label="Show Ads price" description="Show Ads price (default is 1=Show)">
+			<option value="1">Show</option>
+			<option value="2">Hide</option>
+		</field>
+		<field name="valute" type="text" default="Euro" label="Select your currency" description="Select your currency (default is Euro)" />
+		<field name="showhits" type="list" default="1" label="Show Ads hits" description="Show Ads hits (default is 1=Show)">
+			<option value="1">Show</option>
+			<option value="2">Hide</option>
+		</field>
+		</fieldset>
+		</fields>
+		
+		<fields name="params">
+		<fieldset name="other" label="Other">
+		<field name="moduleclass_sfx" type="text" default="mapst"
+					label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+					description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+	</fieldset>
+	</fields>
+	</config>
+</extension>

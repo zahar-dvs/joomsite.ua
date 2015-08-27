@@ -1,0 +1,61 @@
+div.mapst{border: 2px solid #ccc; margin:10px;}
+
+
+
+div.tabbody{
+
+width: 400px;
+
+height: 200px;
+
+overflow: auto;
+
+}
+
+.title1{
+
+margin:0px; 
+
+padding:2px; 
+background-color: green;
+
+
+font-size: 12px;
+
+}
+
+.info{
+
+margin:0px; 
+
+padding:2px; 
+
+background-color: #F3F3F3;
+
+color: #000000;
+
+font-size: 13px;
+
+}
+
+.contentab{
+
+margin:0px;
+
+border:#cccccc 2px dashed;
+
+width: 380px;
+
+}
+
+.loaderGif{
+
+margin-top: 0.5em;
+
+background-color:#E5E3DF;
+
+}
+
+#map_canvasmod img {
+	max-width: none !important;
+}
